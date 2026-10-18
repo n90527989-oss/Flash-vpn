@@ -40,7 +40,7 @@ function renderCart(){
 }
 
 /* ---------- user ---------- */
-function header(){$('ub').textContent=ME?ME.user.username:'ورود / ثبت‌نام'}
+function header(){var b=$('ub'),u=ME?ME.user.username:'';if(ME){b.textContent=(u||'?').charAt(0).toUpperCase();b.classList.add('on');b.title=u;b.setAttribute('aria-label',u)}else{b.innerHTML='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>';b.classList.remove('on');b.title='ورود / ثبت‌نام';b.setAttribute('aria-label','ورود / ثبت‌نام')}}
 function loadMe(){return api('/api/me').then(function(r){ME=r.ok?r.j:null;header();return ME})}
 function dl(s){return Math.max(0,Math.ceil((s.exp-Date.now())/864e5))}
 var STL={pending:['در انتظار پرداخت',''],review:['در حال بررسی','w'],done:['تحویل شد','g'],rejected:['رد شد','r']};
