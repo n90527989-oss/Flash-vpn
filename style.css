@@ -133,3 +133,12 @@ input:focus,select:focus{border-color:var(--ac)}
 .msg small{display:block;color:var(--mu)}
 textarea{font:inherit;color:var(--ink);background:var(--s2);border:1px solid var(--ed);border-radius:12px;padding:10px 12px;width:100%;min-height:80px}
 .emp a{color:var(--ac)}
+
+/* ---- Flash VPN: logo image, avatar button, mobile nav, credit ---- */
+.lg img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 14px var(--glow)}
+.avt{width:42px;height:42px;padding:0;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ac);background:color-mix(in srgb,var(--ac) 12%,transparent);color:var(--ac);font:800 1.05rem/1 inherit;cursor:pointer}
+.avt.on{background:var(--gd);color:var(--ai);border-color:transparent}
+.mnav{display:none}
+@media(max-width:880px){.mnav{display:flex;gap:20px;overflow-x:auto;white-space:nowrap;padding-bottom:10px;color:var(--mu);font-weight:600;scrollbar-width:none}.mnav::-webkit-scrollbar{display:none}.mnav a{flex:none;padding:4px 2px}}
+footer .by{flex-basis:100%;text-align:center;margin-top:6px}
+footer .by b{color:var(--ac);font-family:Inter,sans-serif;letter-spacing:.3px}
